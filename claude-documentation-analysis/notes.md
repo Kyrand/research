@@ -64,3 +64,27 @@ Will write a comprehensive CLAUDE.md that:
 4. Lists key conventions and constraints
 5. Documents the CI/CD pipeline
 6. Provides guidance on common tasks
+
+## Phase 2: Syncing with simonw/research
+
+Fetched the actual simonw/research repo to compare file-by-file.
+
+### Comparison results
+
+| File | Status |
+|------|--------|
+| `.github/workflows/update-readme.yml` | Already matches |
+| `AGENTS.md` | Already matches |
+| `requirements.txt` | Already matches |
+| `.gitignore` | Already matches |
+| `README.md` cog template | **Updated** — was a simplified version |
+| Example folders | Kept as-is (original repo has no examples) |
+
+### Key differences fixed in README.md
+
+1. Cog template now uses `-s` flag for LLM system prompt (matching original)
+2. Added `RuntimeError` error handling for LLM failures
+3. Updated AI note injection to use regex replacement for existing notes (not just insertion)
+4. AI note marker strings constructed via concatenation to avoid HTML comment issues
+5. Added full "Updating this README" documentation section with inline `MODEL` cog block
+6. Removed the old simplified `AI_NOTE` variable approach
